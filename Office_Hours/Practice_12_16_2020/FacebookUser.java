@@ -62,6 +62,8 @@ public class FacebookUser extends SocialMedia{
 
         for(int i=0; i < fullName.length(); i++) {
 
+            if(fullName.charAt(i) == ' ') continue;
+
             if(!Character.isLetter(fullName.charAt(i))) {
                 isValidName = false;
                 break;
@@ -92,6 +94,23 @@ public class FacebookUser extends SocialMedia{
         } else {
             this.numberOfFriends = numberOfFriends;
         }
+
+    }
+
+    public boolean sendFriendRequest(FacebookUser otherUser){
+        boolean valid = false;
+        if(this.numberOfFriends > 500){
+            System.out.println("You have reached the max number of friends");
+        }else if(otherUser.numberOfFriends > 5000){
+            System.out.println(otherUser.fullName + "has reached the max number of friends");
+        }else{
+            System.out.println("Friend request sent to " + otherUser.fullName);
+            this.numberOfFriends++;
+            otherUser.numberOfFriends++;
+            valid = true;
+        }
+
+        return valid;
 
     }
 
@@ -138,7 +157,7 @@ public class FacebookUser extends SocialMedia{
 
     @Override
     public void directMessage(String username, String message) {
-
+        System.out.println(message + "was sent to: " + username);
     }
 
     @Override
@@ -148,9 +167,21 @@ public class FacebookUser extends SocialMedia{
 
     @Override
     public void notification(int time) {
-
+        // 8 am to 5 pm
+        if(time >= 8 && time <= 17){
+            System.out.println("Notification");
+        }else{
+            System.out.println("Sleep mode");
+        }
     }
 
-
-
+    @Override
+    public String toString() {
+        return "FacebookUser{" +
+                "username='" + username + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", age=" + age +
+                ", numberOfFriends=" + numberOfFriends +
+                '}';
+    }
 }
