@@ -23,16 +23,17 @@ public class Util {
 
         return nonDup;
     }
-        // removes the duplicates and returns the value string
+    // removes the duplicates and returns the value string
 
     public static String reverse(String str){
         String result = "";
         for(int i = str.length()-1;  i >=0 ; i--){
             result += str.charAt(i);
         }
+
         return result;
     }
-        // reverse the string and retunr the value
+    // reverse the string and retunr the value
 
     public static int frequency(String str, char ch){
         int count = 0;
@@ -58,7 +59,7 @@ public class Util {
 
         return uniques;
     }
-      // retunrs the uniiques from the string
+    // retunrs the uniiques from the string
 
     public static String frequencyOfChars(String str){
 
@@ -72,7 +73,7 @@ public class Util {
 
         return expectedResult;
     }
-        // returns the frequency of every single characters from a string
+    // returns the frequency of every single characters from a string
 
     public static  String  formatFullName(String first , String last){
         first = first.substring(0, 1).toUpperCase() +  first.substring(1).toLowerCase();
@@ -151,7 +152,7 @@ public class Util {
             }
         }
 
-       return min;
+        return min;
     }
     // find and returns the min number from int array
 
@@ -207,7 +208,7 @@ public class Util {
 
         return arr2;
     }
-        // inserts the element to the array
+    // inserts the element to the array
 
     public static double[] addElement(double[] arr, double element){
         double[] arr2 = new double[arr.length+1];
@@ -307,7 +308,7 @@ public class Util {
 
         return arr2;
     }
-        // sorts int array in descending order and returns it
+    // sorts int array in descending order and returns it
 
     public static double[] sortDesc(double[] arr){
         Arrays.sort(arr);
@@ -401,7 +402,7 @@ public class Util {
 
         return arr2;
     }
-        //sorts Character array in descending order
+    //sorts Character array in descending order
 
 
     public static int[] combine2Arrays(int[] arr1, int[] arr2){
@@ -539,6 +540,4 @@ public class Util {
         }
     }
     // causes the current execution thread to sleep for given seconds
-
-
 }
